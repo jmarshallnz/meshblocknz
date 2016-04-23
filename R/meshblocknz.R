@@ -12,3 +12,44 @@
 #' }
 #' @source \url{http://www.stats.govt.nz/Census/2006CensusHomePage/MeshblockDataset.aspx}
 "mb_2006_ur"
+
+#' Meshblock summary information for NZ from 2013
+#'
+#' A dataset containing the meshblock 2013 identifier and some summary information
+#'
+#' @format A data frame with 46621 rows and 11 variables:
+#' \describe{
+#'   \item{MB2013}{Meshblock identifier from census 2013}
+#'   \item{MB2006}{Meshblock identifier from census 2006. Contains duplicates.}
+#'   \item{UR2013_num}{Numeric scale of urban/rural status from -1 (most rural) to 3 (most urban), based on 2013 meshblocks. Note, not the same scale as the 2006 classification, but <=0 is the same.}
+#'   \item{UR2006_num}{Numeric scale of urban/rural status from -3 (most rural) to 3 (most urban), based on 2006 meshblocks.}
+#'   \item{UR2013}{Urban/Rural categorisation with 2 levels ("Rural" and "Urban") from 2013. Equivalent to UR2013_num <= 0}
+#'   \item{UR2006}{Urban/Rural categorisation with 2 levels ("Rural" and "Urban") from 2006. Equivalent to UR2006_num <= 0}
+#'   \item{DHB_code}{District Health Board code for this meshblock, from 2013 census areas.}
+#'   \item{DHB_label}{District Health Board label for this meshblock, from 2013 census areas (Factor with 21 levels).}
+#'   \item{Pop2001}{Population of meshblock in 2001.}
+#'   \item{Pop2006}{Population of meshblock in 2006.}
+#'   \item{Pop2013}{Population of meshblock in 2013.}
+#' }
+#' @source \url{http://www.stats.govt.nz/Census/2013-census.aspx}
+"mb2013"
+
+#' Meshblock summary information for NZ from 2006
+#'
+#' A dataset containing the meshblock 2006 identifier and some summary information.
+#' This is essentially a filtered version of `mb2013`, with population information
+#' summed where meshblocks have been split from 2006 to 2013.
+#'
+#' @format A data frame with 41376 rows and 11 variables:
+#' \describe{
+#'   \item{MB2006}{Meshblock identifier from census 2006.}
+#'   \item{UR2006_num}{Numeric scale of urban/rural status from -3 (most rural) to 3 (most urban), based on 2006 meshblocks.}
+#'   \item{UR2006}{Urban/Rural categorisation with 2 levels ("Rural" and "Urban") from 2006. Equivalent to UR2006_num <= 0}
+#'   \item{DHB_code}{District Health Board code for this meshblock, from 2013 census areas.}
+#'   \item{DHB_label}{District Health Board label for this meshblock, from 2013 census areas (Factor with 21 levels).}
+#'   \item{Pop2001}{Population of meshblock in 2001.}
+#'   \item{Pop2006}{Population of meshblock in 2006.}
+#'   \item{Pop2013}{Population of meshblock in 2013.}
+#' }
+#' @source \url{http://www.stats.govt.nz/Census/2013-census.aspx}
+"mb2006"
