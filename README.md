@@ -15,5 +15,10 @@ devtools::install_github("jmarshallnz/meshblocknz")
 
 ```R
 library(meshblocknz)
+head(mb_2013)
+head(mb_2006)
+
+# there is also old data (for backward compatibility - this will be removed once everything
+# that relies on this is removed)
 head(mb_2006_ur)
 ```
