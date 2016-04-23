@@ -1,8 +1,8 @@
 Package: meshblocknz
 Type: Package
 Title: Useful Data For Spatial Meshblocks In NZ
-Version: 0.1
-Date: 2015-04-01
+Version: 0.2
+Date: 2016-04-23
 Authors@R: person("Jonathan", "Marshall", email = "J.C.Marshall@massey.ac.nz",
                   role = c("aut", "cre"))
 Depends:
