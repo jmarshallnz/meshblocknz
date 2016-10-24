@@ -1,28 +1,35 @@
 library(dplyr)
 
-# download census information
-# download.file("http://www3.stats.govt.nz/meshblock/2013/csv/2013_mb_dataset_Total_New_Zealand_CSV.zip",
-#              destfile = "data-raw/census2013/2013_mb_census.zip", mode = "wb")
-# unzip("data-raw/census2013/2013_mb_census.zip", exdir = "data-raw/census2013")
+download <- FALSE
 
-#download.file("http://www3.stats.govt.nz/meshblock/2006/excel/2006mbdatasetallnz.zip",
-#              destfile = "data-raw/census2006/2006_mb_census.zip", mode = "wb")
-#unzip("data-raw/census2006/2006_mb_census.zip", exdir = "data-raw/census2006")
+if (download) {
+  # download census information
+  download.file("http://www3.stats.govt.nz/meshblock/2013/csv/2013_mb_dataset_Total_New_Zealand_CSV.zip",
+                destfile = "data-raw/census2013/2013_mb_census.zip", mode = "wb")
+  unzip("data-raw/census2013/2013_mb_census.zip", exdir = "data-raw/census2013")
+}
 
-# download.file("http://www3.stats.govt.nz/digitalboundaries/annual/2013_Areas_Table.zip",
-#              destfile = "data-raw/census2013/2013_area_table.zip", mode = "wb")
+if (download) {
+  download.file("http://www3.stats.govt.nz/meshblock/2006/excel/2006mbdatasetallnz.zip",
+                destfile = "data-raw/census2006/2006_mb_census.zip", mode = "wb")
+  unzip("data-raw/census2006/2006_mb_census.zip", exdir = "data-raw/census2006")
+}
 
-# hmm, for some reason we can't extract this one?
-# unzip("data-raw/census2006/2013_area_table.zip", exdir = "data-raw/census2013")
-
-# for completeness, lets see if we can get a 2013 UR classification...
+if (download) {
+  download.file("http://www3.stats.govt.nz/digitalboundaries/annual/2013_Areas_Table.zip",
+                destfile = "data-raw/census2013/2013_area_table.zip", mode = "wb")
+  unzip("data-raw/census2013/2013_area_table.zip", exdir = "data-raw/census2013")
+}
 
 # unfortunately the 2013 MB map (to figure out urban/rural areas) is only downloadable via
 # stats NZ and contains SHEDLOADS of data.
 # it can be grabbed from https://datafinder.stats.govt.nz
-# unzip("data-raw/census2013/meshblock-2013-CSV.zip", exdir = "data-raw/census2013")
-# read.csv("data-raw/census2013/meshblock-2013.csv", stringsAsFactors = FALSE) %>%
-#   select(-WKT) %>% write.csv("data-raw/census2013/meshblock-2013.csv", row.names=FALSE)
+if (download) {
+  unzip("data-raw/census2013/meshblock-2013-CSV.zip", exdir = "data-raw/census2013")
+  # first column contains shapefile information, so remove that first
+  read.csv("data-raw/census2013/statsnzmeshblock-2013-CSV/meshblock-2013.csv", stringsAsFactors = FALSE) %>%
+    select(-WKT) %>% write.csv("data-raw/census2013/meshblock-2013.csv", row.names=FALSE)
+}
 
 # read in the data
 mb2013 <- read.csv("data-raw/census2013/meshblock-2013.csv", stringsAsFactors = FALSE)
