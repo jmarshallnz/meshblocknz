@@ -27,6 +27,27 @@
 #'   \item{UR2006}{Urban/Rural categorisation with 2 levels ("Rural" and "Urban") from 2006. Equivalent to UR2006_num <= 0}
 #'   \item{DHB_code}{District Health Board code for this meshblock, from 2013 census areas.}
 #'   \item{DHB_label}{District Health Board label for this meshblock, from 2013 census areas (Factor with 21 levels).}
+#'   \item{AU2013}{Area unit code for this meshblock, from 2013 census areas.}
+#'   \item{AU2013_name}{Area unit name for this meshblock, from 2013 census areas.}
+#'   \item{TA2013}{Territorial Authority code for this meshblock, from 2013 census areas.}
+#'   \item{TA2013_name}{Area unit name for this meshblock, from 2013 census areas.}
+#'   \item{Ward2013}{Ward code for this meshblock, from 2013 census areas.}
+#'   \item{Ward2013_name}{Ward name for this meshblock, from 2013 census areas.}
+#'   \item{CB2013}{Community Board code for this meshblock, from 2013 census areas.}
+#'   \item{CB2013_name}{Community Board name for this meshblock, from 2013 census areas.}
+#'   \item{RC2013}{Regional Council code for this meshblock, from 2013 census areas.}
+#'   \item{RC2013_name}{Regional Council name for this meshblock, from 2013 census areas.}
+#'   \item{GC2013}{General Constituency code for this meshblock, from 2013 census areas.}
+#'   \item{GC2013_name}{General Constituency name for this meshblock, from 2013 census areas.}
+#'   \item{MC2013}{Māori Constituency code for this meshblock, from 2013 census areas.}
+#'   \item{MC2013_name}{Māori Constituency name for this meshblock, from 2013 census areas.}
+#'   \item{GE2007}{General Electorate code for this meshblock, from 2007 election areas.}
+#'   \item{GE2007_name}{General Electorate name for this meshblock, from 2007 election areas.}
+#'   \item{ME2007}{Māori Electorate code for this meshblock, from 2007 election areas.}
+#'   \item{ME2007_name}{Māori Electorate name for this meshblock, from 2007 election areas.}
+#'   \item{LC2013}{Land Code for this meshblock, from 2013 census areas.}
+#'   \item{LC2013_name}{Land Code name for this meshblock, from 2013 census areas.}
+#'   \item{Area}{Area of this meshblock in square kilometers.}
 #'   \item{Pop2001}{Population of meshblock in 2001.}
 #'   \item{Pop2006}{Population of meshblock in 2006.}
 #'   \item{Pop2013}{Population of meshblock in 2013.}
