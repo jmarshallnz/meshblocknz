@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jmarshallnz/meshblocknz.svg?branch=master)](https://travis-ci.org/jmarshallnz/meshblocknz)
+
 # meshblocknz
 
 R package capturing meshblock data for New Zealand
