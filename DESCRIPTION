@@ -10,6 +10,7 @@ Depends:
 Description: Useful functions and data for dealing with spatial meshblocks in
     NZ.
 License: GPL-3
+Encoding: UTF-8
 LazyData: true
 URL: http://github.com/jmarshallnz/meshblocknz
 RoxygenNote: 5.0.1
