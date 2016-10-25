@@ -76,7 +76,7 @@ mb2013 = mb2013 %>%
          UR2013,
          UR2006,
          DHB_code,
-         DHB_label,
+         DHB_name = DHB_label,
          AU2013=AreaUnitCode,
          AU2013_name = AreaUnitName,
          TA2013=TLACode,
@@ -113,8 +113,8 @@ mb2013 <- mb2013 %>% left_join(indiv)
 
 # create the 2006 dataset by filtering this one
 mb2006 <- mb2013 %>%
-  select(MB2006, UR2006_num, UR2006, DHB_code, DHB_label, Pop2001, Pop2006, Pop2013) %>%
-  group_by(MB2006, UR2006_num, UR2006, DHB_code, DHB_label) %>%
+  select(MB2006, UR2006_num, UR2006, DHB_code, DHB_name, Pop2001, Pop2006, Pop2013) %>%
+  group_by(MB2006, UR2006_num, UR2006, DHB_code, DHB_name) %>%
   summarise(Pop2001 = sum(Pop2001),
             Pop2006 = sum(Pop2006),
             Pop2013 = sum(Pop2013)) %>% ungroup

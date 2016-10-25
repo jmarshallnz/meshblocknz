@@ -13,7 +13,7 @@
   \item{UR2013}{Urban/Rural categorisation with 2 levels ("Rural" and "Urban") from 2013. Equivalent to UR2013_num <= 0}
   \item{UR2006}{Urban/Rural categorisation with 2 levels ("Rural" and "Urban") from 2006. Equivalent to UR2006_num <= 0}
   \item{DHB_code}{District Health Board code for this meshblock, from 2013 census areas.}
-  \item{DHB_label}{District Health Board label for this meshblock, from 2013 census areas (Factor with 21 levels).}
+  \item{DHB_name}{District Health Board name for this meshblock, from 2013 census areas (Factor with 21 levels).}
   \item{AU2013}{Area unit code for this meshblock, from 2013 census areas.}
   \item{AU2013_name}{Area unit name for this meshblock, from 2013 census areas.}
   \item{TA2013}{Territorial Authority code for this meshblock, from 2013 census areas.}
