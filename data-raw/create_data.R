@@ -119,6 +119,30 @@ mb2006 <- mb2013 %>%
             Pop2006 = sum(Pop2006),
             Pop2013 = sum(Pop2013)) %>% ungroup
 
+# extract 2006 mapping information
+library(readxl)
+files <- list.files("data-raw/census2006/", pattern="part 1.xls")
+extract_concordance <- function(file) {
+  cat("reading file: ", file, "\n")
+  sh <- read_excel(file.path("data-raw/census2006", file), sheet = 1)
+  # change the names. Yay, inconsistency
+  names(sh) <- sub("(.*) \\(2006 Areas\\)", "\\1", names(sh))
+  sh %>%
+    mutate(MB2006 = as.numeric(substr(Meshblock, 4, 11))) %>%
+    filter(!is.na(MB2006)) %>%
+    select(MB2006,
+           AU2006 = `Area Unit Code`,
+           AU2006_name = `Area Unit Description`,
+           Ward2006 = `Ward Code`,
+           Ward2006_name = `Ward Description`,
+           TA2006 = `Territorial Authority Code`,
+           TA2006_name = `Territorial Authority Description`,
+           RC2006 = `Regional Council Code`,
+           RC2006_name = `Regional Council Description`)
+}
+map <- do.call(rbind, lapply(files, extract_concordance))
+mb2006 <- mb2006 %>% left_join(map)
+
 # save this information
 devtools::use_data(mb2013, overwrite=TRUE)
 devtools::use_data(mb2006, overwrite=TRUE)

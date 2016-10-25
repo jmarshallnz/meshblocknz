@@ -68,6 +68,14 @@
 #'   \item{UR2006}{Urban/Rural categorisation with 2 levels ("Rural" and "Urban") from 2006. Equivalent to UR2006_num <= 0}
 #'   \item{DHB_code}{District Health Board code for this meshblock, from 2013 census areas.}
 #'   \item{DHB_name}{District Health Board name for this meshblock, from 2013 census areas (Factor with 21 levels).}
+#'   \item{AU2006}{Area unit code for this meshblock, from 2006 census areas.}
+#'   \item{AU2006_name}{Area unit name for this meshblock, from 2006 census areas.}
+#'   \item{TA2006}{Territorial Authority code for this meshblock, from 2006 census areas.}
+#'   \item{TA2006_name}{Area unit name for this meshblock, from 2006 census areas.}
+#'   \item{Ward2006}{Ward code for this meshblock, from 2006 census areas.}
+#'   \item{Ward2006_name}{Ward name for this meshblock, from 2006 census areas.}
+#'   \item{RC2006}{Regional Council code for this meshblock, from 2006 census areas.}
+#'   \item{RC2006_name}{Regional Council name for this meshblock, from 2006 census areas.}
 #'   \item{Pop2001}{Population of meshblock in 2001.}
 #'   \item{Pop2006}{Population of meshblock in 2006.}
 #'   \item{Pop2013}{Population of meshblock in 2013.}
