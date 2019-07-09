@@ -22,7 +22,9 @@
 #'   \item{MB2013}{Meshblock identifier from census 2013}
 #'   \item{MB2006}{Meshblock identifier from census 2006. Contains duplicates.}
 #'   \item{UR2013_num}{Numeric scale of urban/rural status from -1 (most rural) to 3 (most urban), based on 2013 meshblocks. Note, not the same scale as the 2006 classification, but <=0 is the same.}
+#'   \item{UR2013_name}{Named urban/rural status, based on 2013 meshblocks.}
 #'   \item{UR2006_num}{Numeric scale of urban/rural status from -3 (most rural) to 3 (most urban), based on 2006 meshblocks.}
+#'   \item{UR2006_name}{Named urban/rural status, based on 2006 meshblocks.}
 #'   \item{UR2013}{Urban/Rural categorisation with 2 levels ("Rural" and "Urban") from 2013. Equivalent to UR2013_num <= 0}
 #'   \item{UR2006}{Urban/Rural categorisation with 2 levels ("Rural" and "Urban") from 2006. Equivalent to UR2006_num <= 0}
 #'   \item{DHB_code}{District Health Board code for this meshblock, from 2013 census areas.}
@@ -65,6 +67,7 @@
 #' \describe{
 #'   \item{MB2006}{Meshblock identifier from census 2006.}
 #'   \item{UR2006_num}{Numeric scale of urban/rural status from -3 (most rural) to 3 (most urban), based on 2006 meshblocks.}
+#'   \item{UR2006_name}{Named urban/rural status, based on 2006 meshblocks.}
 #'   \item{UR2006}{Urban/Rural categorisation with 2 levels ("Rural" and "Urban") from 2006. Equivalent to UR2006_num <= 0}
 #'   \item{DHB_code}{District Health Board code for this meshblock, from 2013 census areas.}
 #'   \item{DHB_name}{District Health Board name for this meshblock, from 2013 census areas (Factor with 21 levels).}

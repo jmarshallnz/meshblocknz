@@ -22,4 +22,3 @@ A dataset containing the meshblock 2006 identifier and urban/rural status
 for all meshblocks in New Zealand.
 }
 \keyword{datasets}
-
