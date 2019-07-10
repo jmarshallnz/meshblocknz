@@ -37,6 +37,8 @@
   \item{LC2013}{Land Code for this meshblock, from 2013 census areas.}
   \item{LC2013_name}{Land Code name for this meshblock, from 2013 census areas.}
   \item{Area}{Area of this meshblock in square kilometers.}
+  \item{X}{X coordinate of meshblock centroid.}
+  \item{Y}{Y coordinate of meshblock centroid.}
   \item{Pop2001}{Population of meshblock in 2001.}
   \item{Pop2006}{Population of meshblock in 2006.}
   \item{Pop2013}{Population of meshblock in 2013.}

@@ -1,4 +1,5 @@
 library(dplyr)
+library(sf)
 
 download <- FALSE
 
@@ -26,9 +27,11 @@ if (download) {
 # it can be grabbed from https://datafinder.stats.govt.nz
 if (download) {
   unzip("data-raw/census2013/meshblock-2013-CSV.zip", exdir = "data-raw/census2013")
-  # first column contains shapefile information, so remove that first
-  read.csv("data-raw/census2013/statsnzmeshblock-2013-CSV/meshblock-2013.csv", stringsAsFactors = FALSE) %>%
-    select(-WKT) %>% write.csv("data-raw/census2013/meshblock-2013.csv", row.names=FALSE)
+  shape <- read_sf("data-raw/census2013/statsnzmeshblock-2013-CSV/meshblock-2013.csv")
+  coords <- shape %>% st_centroid() %>% select(-WKT)
+  coords.xy <- st_coordinates(coords) %>% as.data.frame()
+  coords %>% mutate(x = coords.xy$X, y = coords.xy$Y) %>% st_drop_geometry() %>%
+    write.csv("data-raw/census2013/meshblock-2013.csv", row.names=FALSE)
 }
 
 # read in the data
@@ -99,7 +102,9 @@ mb2013 = mb2013 %>%
          ME2007_name = MaoriElectoralDistrictName_2007,
          LC2013 = LandCode,
          LC2013_name = LandDescription,
-         Area = LandAreaSQKM)
+         Area = LandAreaSQKM,
+         X = x,
+         Y = y)
 
 # ok, now join to population summaries
 indiv <- read.csv("data-raw/census2013/2013-mb-dataset-Total-New-Zealand-Individual-Part-1.csv",
@@ -146,5 +151,5 @@ map <- do.call(rbind, lapply(files, extract_concordance))
 mb2006 <- mb2006 %>% left_join(map)
 
 # save this information
-devtools::use_data(mb2013, overwrite=TRUE)
-devtools::use_data(mb2006, overwrite=TRUE)
+usethis::use_data(mb2013, overwrite=TRUE)
+usethis::use_data(mb2006, overwrite=TRUE)
